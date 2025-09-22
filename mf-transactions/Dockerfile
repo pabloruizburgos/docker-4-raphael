@@ -23,4 +23,4 @@ RUN npm run build
 EXPOSE 3002
 
 # Comando para servir los archivos estáticos con CORS
-CMD ["serve", "dist", "--cors", "-l", "3002", "--host", "0.0.0.0"]
+CMD ["serve", "dist", "--cors", "--listen", "3002"]
