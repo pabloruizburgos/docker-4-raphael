@@ -1,0 +1,2 @@
+sudo apt purge -y node.js npm
+sudo apt autoremove -y
