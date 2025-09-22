@@ -139,8 +139,9 @@ bash
 Copy
 Edit
 npm run build
+```
 To clean up and reinstall:
-
+```bash
 bash
 Copy
 Edit
