@@ -135,16 +135,10 @@ If a remote module fails to load, check:
 To build each microfrontend:
 
 ```bash
-bash
-Copy
-Edit
 npm run build
 ```
 To clean up and reinstall:
 ```bash
-bash
-Copy
-Edit
 rm -rf dist node_modules
 npm install
 ```
