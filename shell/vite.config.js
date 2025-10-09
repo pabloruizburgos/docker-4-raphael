@@ -38,7 +38,7 @@ plugins: [
     })
 ],
 build: {
-    target: 'es2018',
+    target: 'es2015',
     minify: 'terser',
     cssCodeSplit: true,
     rollupOptions: {
@@ -48,9 +48,9 @@ build: {
     }
 },
 esbuild: {
-    target: 'es2018'
+    target: 'es2015'
 },
 define: {
-    global: 'globalThis',
+    global: 'globalThis'
 }
 })
