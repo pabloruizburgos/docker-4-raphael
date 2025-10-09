@@ -38,13 +38,19 @@ plugins: [
     })
 ],
 build: {
-    target: 'esnext',
-    minify: false,
+    target: 'es2018',
+    minify: 'terser',
     cssCodeSplit: true,
     rollupOptions: {
         output: {
             minifyInternalExports: false
         }
     }
+},
+esbuild: {
+    target: 'es2018'
+},
+define: {
+    global: 'globalThis',
 }
 })
