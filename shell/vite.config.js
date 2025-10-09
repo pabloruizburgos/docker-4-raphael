@@ -38,19 +38,34 @@ plugins: [
     })
 ],
 build: {
-    target: 'es2015',
-    minify: 'terser',
+    target: ['es2015', 'edge86'], // Bajado a es2015 para máxima compatibilidad
+    minify: 'terser', // Cambio: de false a terser para mejor compatibilidad
     cssCodeSplit: true,
+    modulePreload: false, // Desactivar module preload
     rollupOptions: {
-        output: {
-            minifyInternalExports: false
-        }
+      output: {
+        minifyInternalExports: false,
+        format: 'es', // Mantener ES modules
+        inlineDynamicImports: false
+      }
     }
-},
-esbuild: {
-    target: 'es2015'
-},
-define: {
-    global: 'globalThis'
-}
+  },
+  // NUEVAS CONFIGURACIONES PARA COMPATIBILIDAD
+  esbuild: {
+    target: 'es2015',
+    supported: {
+      'top-level-await': false // CRÍTICO: Desactivar top-level await
+    }
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      target: 'es2015',
+      supported: {
+        'top-level-await': false
+      }
+    }
+  },
+  define: {
+    global: 'globalThis',
+  }
 })
